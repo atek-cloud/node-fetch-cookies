@@ -27,7 +27,7 @@ export default Test => [
                 [...cookieJar.cookiesValidForRequest("https://localhost")]
                     .length != 1 ||
                 [...cookieJar.cookiesValidForRequest("http://localhost")]
-                    .length != 0
+                    .length != 1
             )
                 return false;
             cookieJar.deleteExpired(false);

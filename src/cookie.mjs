@@ -159,7 +159,9 @@ export default class Cookie {
         if (
             (parsedURL.protocol !== "http:" &&
                 parsedURL.protocol !== "https:") ||
-            (this.secure && parsedURL.protocol !== "https:") ||
+            (this.secure &&
+                parsedURL.protocol !== "https:" &&
+                parsedURL.hostname !== "localhost") ||
             !validateHostname(
                 this.domain,
                 parsedURL.hostname,
